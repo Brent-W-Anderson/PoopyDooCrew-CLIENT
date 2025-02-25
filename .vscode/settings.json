@@ -1,0 +1,50 @@
+{
+    // UI Preferences
+    "workbench.colorTheme": "Default Dark+",
+
+    // Editor Behavior
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+
+    // Formatting Defaults (TS, JS, JSON)
+    "[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+    "[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+    "[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+    "[javascriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "files.insertFinalNewline": true
+    },
+
+    // Automatically apply ESLint fixes on save
+    "editor.codeActionsOnSave": ["source.fixAll"],
+
+    // Prettier Configuration
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.bracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.arrowParens": "avoid",
+
+    // JavaScript Formatting Rules
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+
+    // TypeScript Formatting Rules (Consistent with JS)
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+
+    // Associate file extensions with correct language modes
+    "files.associations": {
+        "*.ts": "typescript",
+        "*.tsx": "typescriptreact"
+    },
+
+    // Ensure final newlines in non-code files are disabled
+    "files.insertFinalNewline": false
+}

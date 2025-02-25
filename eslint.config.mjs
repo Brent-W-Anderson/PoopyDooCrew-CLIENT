@@ -1,6 +1,8 @@
 import js from '@eslint/js'
 import ts from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
 
 export default [
     {
@@ -10,18 +12,24 @@ export default [
     {
         languageOptions: {
             parser: tsParser,
-            ecmaVersion: 'latest',
-            sourceType: 'module',
             globals: {
-                process: 'readonly',
-                console: 'readonly'
+                document: 'readonly',
+                window: 'readonly'
+            },
+            parserOptions: {
+                ecmaVersion: 'latest',
+                sourceType: 'module',
+                jsx: true
             }
         },
         plugins: {
-            '@typescript-eslint': ts
+            '@typescript-eslint': ts,
+            react: react,
+            'react-hooks': reactHooks
         },
         rules: {
             ...ts.configs.recommended.rules,
+            ...react.configs.recommended.rules,
 
             'no-trailing-spaces': 'error',
 
@@ -39,11 +47,11 @@ export default [
             'max-len': [
                 'error',
                 {
-                    'code': 80,
-                    'ignoreComments': true,
-                    'ignoreStrings': true,
-                    'ignoreTemplateLiterals': true,
-                    'ignoreRegExpLiterals': true
+                    code: 80,
+                    ignoreComments: true,
+                    ignoreStrings: true,
+                    ignoreTemplateLiterals: true,
+                    ignoreRegExpLiterals: true
                 }
             ],
 
@@ -97,9 +105,13 @@ export default [
             // Style rules
             indent: ['error', 4],
             semi: ['error', 'never'],
-            quotes: ['error', 'single', {
-                avoidEscape: true
-            }],
+            quotes: [
+                'error',
+                'single',
+                {
+                    avoidEscape: true
+                }
+            ],
             'space-in-parens': ['error', 'always'],
             'eol-last': ['error', 'never'],
             'array-bracket-spacing': ['error', 'never'],

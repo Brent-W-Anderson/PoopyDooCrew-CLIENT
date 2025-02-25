@@ -4,11 +4,14 @@
         "moduleDetection": "force",
         "module": "ESNext",
         "target": "ESNext",
+        "jsx": "react-jsx",
         "outDir": "dist",
-        "rootDir": "src",
         "strict": true,
         "esModuleInterop": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "allowJs": true
     },
-    "exclude": ["node_modules/", "dist/"]
+    "exclude": ["node_modules/", "dist/"],
+    "include": ["src/**/*", "./eslint.config.mjs"]
 }
