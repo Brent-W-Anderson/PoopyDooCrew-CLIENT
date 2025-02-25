@@ -14,6 +14,6 @@
 
 ### 🌿 $${\color{#9AA6B2} \text{BRANCHES}}$$ 🌿
 
-&nbsp;&nbsp;&nbsp;&nbsp;🔹🪵 [**API**](https://github.com/Brent-W-Anderson/PoopyDooCrew/tree/API) (Backend Development) ➜ This branch contains all backend-related code, including API endpoints, database interactions, and server logic.
+&nbsp;&nbsp;&nbsp;&nbsp;🔹🪵 [**API**](https://github.com/Brent-W-Anderson/PoopyDooCrew-API) (Backend Development) ➜ This branch contains all backend-related code, including API endpoints, database interactions, and server logic.
 
-&nbsp;&nbsp;&nbsp;&nbsp;🔹🍃 [**CLIENT**](https://github.com/Brent-W-Anderson/PoopyDooCrew/tree/CLIENT) (Frontend Development) ➜ This branch contains all frontend-related code, including UI components, styles, and client-side logic.
+&nbsp;&nbsp;&nbsp;&nbsp;🔹🍃 [**CLIENT**](https://github.com/Brent-W-Anderson/PoopyDooCrew-CLIENT) (Frontend Development) ➜ This branch contains all frontend-related code, including UI components, styles, and client-side logic.
