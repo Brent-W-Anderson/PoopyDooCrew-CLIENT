@@ -1,0 +1,12 @@
+{
+    "plugins": [
+        "prettier-plugin-sort-json"
+    ],
+    "semi": false,
+    "singleQuote": true,
+    "proseWrap": "always",
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "tabWidth": 4
+}

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "bundler",
+        "moduleDetection": "force",
+        "module": "ESNext",
+        "target": "ESNext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "strict": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    },
+    "exclude": ["node_modules/", "dist/"]
+}
