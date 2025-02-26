@@ -1,21 +1,23 @@
+@use '../../config/variables.scss';
+
 .bar {
     display: flex;
     justify-content: center;
-    min-width: calc(100% + 80px);
-    padding: 12px 36px;
+    min-width: calc(100% + calc(var(--padding-40) * 2));
+    padding: var(--padding-12) var(--padding-36); // 40px - (8px / 2) = 36px
     background: #666;
 
     ul {
         display: flex;
         justify-content: space-between;
-        width: min(100%, 1448px);
+        width: min(100%, var(--screen-xl) + 8px); // adjust with bar padding ^^
 
         li {
             list-style: none;
 
             a {
                 text-decoration: none;
-                padding: 4px 4px;
+                padding: var(--padding-4) var(--padding-4);
                 color: #fff;
 
                 &:active {
