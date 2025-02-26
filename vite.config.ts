@@ -1,24 +1,16 @@
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig( {
     base: '/',
     plugins: [
+        react(),
         createHtmlPlugin( {
             minify: true,
             entry: '/src/index.tsx',
             template: './src/index.html'
-        } ),
-        viteStaticCopy( {
-            targets: [
-                {
-                    src: 'src/assets/**/*',
-                    dest: 'assets'
-                }
-            ]
         } )
-
     ],
     build: {
         target: 'esnext',

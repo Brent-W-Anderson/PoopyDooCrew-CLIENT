@@ -1,0 +1,27 @@
+.bar {
+    display: flex;
+    justify-content: center;
+    min-width: calc(100% + 80px);
+    padding: 12px 36px;
+    background: #666;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        width: min(100%, 1448px);
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                padding: 4px 4px;
+                color: #fff;
+
+                &:active {
+                    filter: brightness(80%);
+                }
+            }
+        }
+    }
+}

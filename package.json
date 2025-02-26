@@ -7,17 +7,20 @@
     "author": "J-A-R-V-I-S\\gobre <gobrent21@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "vite",
+        "dev": "concurrently \"vite\" \"yarn generate-types\"",
         "clean": "rm -rf dist",
         "build": "vite build",
         "start": "vite preview",
         "clean:build:start": "yarn clean && yarn build && yarn start",
+        "generate-types": "set SASS_USE_EMBEDDED=true && typed-scss-modules src --watch",
         "lint": "eslint . && prettier --check \"**/*.json\" || true",
         "lint:fix": "eslint . --fix && prettier --write \"**/*.json\""
     },
     "dependencies": {
         "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "react-dom": "^19.0.0",
+        "react-router-dom": "^7.2.0",
+        "sass": "^1.85.1"
     },
     "devDependencies": {
         "@types/react": "^19.0.10",
@@ -31,9 +34,9 @@
         "eslint-plugin-react-hooks": "^5.1.0",
         "prettier": "^3.5.2",
         "prettier-plugin-sort-json": "^4.1.1",
+        "typed-scss-modules": "^8.1.1",
         "typescript": "^5.7.3",
         "vite": "^6.2.0",
-        "vite-plugin-html": "^3.2.2",
-        "vite-plugin-static-copy": "^2.2.0"
+        "vite-plugin-html": "^3.2.2"
     }
 }

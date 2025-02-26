@@ -3,10 +3,9 @@ import ts from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
-
 export default [
     {
-        ignores: ['dist/', 'node_modules/']
+        ignores: ['dist/', 'node_modules/', '**/*.module.scss.d.ts']
     },
     js.configs.recommended,
     {
@@ -30,9 +29,7 @@ export default [
         rules: {
             ...ts.configs.recommended.rules,
             ...react.configs.recommended.rules,
-
             'no-trailing-spaces': 'error',
-
             // Alphabetize Class Members & Interface Properties & Imports
             '@typescript-eslint/member-ordering': [
                 'error',
@@ -42,19 +39,17 @@ export default [
                     }
                 }
             ],
-
             // Set maximum line length to enforce automatic breaking
             'max-len': [
                 'error',
                 {
                     code: 80,
                     ignoreComments: true,
-                    ignoreStrings: true,
-                    ignoreTemplateLiterals: true,
-                    ignoreRegExpLiterals: true
+                    ignoreStrings: false,
+                    ignoreTemplateLiterals: false,
+                    ignoreRegExpLiterals: false
                 }
             ],
-
             // Enforce spacing rules
             'no-multiple-empty-lines': [
                 'error',
@@ -64,36 +59,35 @@ export default [
                     maxBOF: 0
                 }
             ],
-
             // Force properties to new lines when the object exceeds a certain length
             'object-curly-newline': [
-                'error',
+                'warn',
                 {
                     ObjectExpression: {
-                        minProperties: 1,
+                        minProperties: 99,
                         multiline: true,
                         consistent: true
                     },
                     ObjectPattern: {
-                        minProperties: 1,
+                        minProperties: 99,
                         multiline: true,
                         consistent: true
                     },
                     ImportDeclaration: {
-                        minProperties: 3,
+                        minProperties: 99,
+                        multiline: true,
                         consistent: true
                     },
                     ExportDeclaration: {
-                        minProperties: 3,
+                        minProperties: 99,
+                        multiline: true,
                         consistent: true
                     }
                 }
             ],
-
             // parenthesis () formatting: Force properties to be on new lines
             'function-call-argument-newline': ['error', 'consistent'],
             'function-paren-newline': ['error', 'multiline'],
-
             // Object formatting: Force properties to be on new lines
             'object-property-newline': [
                 'error',
@@ -101,7 +95,6 @@ export default [
                     allowAllPropertiesOnSameLine: false
                 }
             ],
-
             // Style rules
             indent: ['error', 4],
             semi: ['error', 'never'],

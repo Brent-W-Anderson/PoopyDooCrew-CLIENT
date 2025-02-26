@@ -1,14 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Pages from './pages/Pages'
+import Navbar from './components/Navbar'
+import './index.css'
 
-function App() {
-    return (
-        <div>
-            <h1>Hello, Poopy-Doo Crew!</h1>
-        </div>
-    )
-}
-
-ReactDOM.createRoot( document.getElementById( 'root' )! ).render( <React.StrictMode>
-    <App />
-</React.StrictMode> )
+ReactDOM.createRoot( document.getElementById( 'root' )! )
+    .render( <React.StrictMode>
+        <Navbar />
+        <Pages />
+    </React.StrictMode> )
