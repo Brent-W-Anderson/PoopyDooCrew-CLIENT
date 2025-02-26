@@ -15,6 +15,7 @@
         "editor.defaultFormatter": "vscode.json-language-features",
         "files.insertFinalNewline": true
     },
+    "[svg]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
     // Automatically apply ESLint fixes on save
     "editor.codeActionsOnSave": ["source.fixAll"],
@@ -42,7 +43,12 @@
     // Associate file extensions with correct language modes
     "files.associations": {
         "*.ts": "typescript",
-        "*.tsx": "typescriptreact"
+        "*.tsx": "typescriptreact",
+        "*.svg": "xml"
+    },
+
+    "workbench.editorAssociations": {
+        "*.svg": "default"
     },
 
     // Ensure final newlines in non-code files are disabled
