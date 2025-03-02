@@ -34,6 +34,7 @@ export default [
         rules: {
             ...ts.configs.recommended.rules,
             ...react.configs.recommended.rules,
+            'react/react-in-jsx-scope': 'off',
             'no-trailing-spaces': 'error',
             // Alphabetize Class Members & Interface Properties & Imports
             '@typescript-eslint/member-ordering': [

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Navbar.module.scss'
 
 const Navbar = () => {
@@ -8,6 +7,7 @@ const Navbar = () => {
                 <li>
                     <a href="/"> Home </a>
                 </li>
+
                 <li>
                     <a href="/login-signup"> Login/Signup </a>
                 </li>
