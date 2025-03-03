@@ -1,6 +1,10 @@
 const ROUTES = {
     HOME: '/',
-    LOGIN: '/login-signup'
+    SERVICES: '/services',
+    PRICING: '/pricing',
+    FAQ: '/faq',
+    CONTACT: '/contact',
+    LOGIN: '/login'
 }
 
 export default ROUTES

@@ -1,16 +1,24 @@
+import { Link, useLocation } from 'react-router-dom'
+import ROUTES from '../../config/routes'
 import styles from './Navbar.module.scss'
 
 const Navbar = () => {
-    return (
-        <div className={ styles.bar }>
-            <ul>
-                <li>
-                    <a href="/"> Home </a>
-                </li>
+    const location = useLocation()
 
-                <li>
-                    <a href="/login-signup"> Login/Signup </a>
-                </li>
+    return (
+        <div className={styles.bar}>
+            <ul>
+                {Object.entries( ROUTES ).map( ( [key, path] ) => (
+                    <li key={key}>
+                        <Link
+                            to={path}
+                            className={location.pathname === path
+                                ? styles.selected : ''}
+                        >
+                            {key.replace( '_', ' ' )}
+                        </Link>
+                    </li>
+                ) )}
             </ul>
         </div>
     )

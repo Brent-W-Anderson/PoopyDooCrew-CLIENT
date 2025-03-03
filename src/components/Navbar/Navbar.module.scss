@@ -9,6 +9,7 @@
 
     ul {
         display: flex;
+        user-select: none;
         justify-content: space-between;
         width: min(100%, var(--screen-xl) + 8px); // adjust with bar padding ^^
 
@@ -20,6 +21,12 @@
                 padding: var(--padding-4) var(--padding-4);
                 color: #fff;
 
+                &.selected {
+                    cursor: default;
+                    pointer-events: none;
+                }
+
+                &.selected,
                 &:active {
                     filter: brightness(80%);
                 }
