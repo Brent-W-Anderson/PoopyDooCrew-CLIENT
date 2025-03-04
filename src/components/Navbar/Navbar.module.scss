@@ -1,36 +1,122 @@
 @use '../../config/variables.scss';
 
+.nav,
 .bar {
     display: flex;
     justify-content: center;
-    min-width: calc(100% + calc(var(--padding-40) * 2));
-    padding: var(--padding-12) var(--padding-36); // 40px - (8px / 2) = 36px
-    background: #666;
+    width: 100%;
+    padding: 0 var(--padding-20);
+    z-index: 100;
 
     ul {
         display: flex;
         user-select: none;
+        align-items: center;
         justify-content: space-between;
-        width: min(100%, var(--screen-xl) + 8px); // adjust with bar padding ^^
+        width: min(100%, var(--screen-xl));
 
         li {
             list-style: none;
+        }
+    }
 
-            a {
-                text-decoration: none;
-                padding: var(--padding-4) var(--padding-4);
-                color: #fff;
+    h2 {
+        font-weight: normal;
+    }
+}
 
-                &.selected {
-                    cursor: default;
-                    pointer-events: none;
-                }
+.bar {
+    background: #fff;
+    border-bottom: 2px solid #666;
+    box-shadow: 0 0 8px #666;
+    height: 36px;
+}
 
-                &.selected,
-                &:active {
-                    filter: brightness(80%);
+.nav {
+    padding-top: var(--padding-4);
+
+    a {
+        text-decoration: none;
+        color: #333;
+
+        &.selected {
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    .logo {
+        width: 117px;
+        padding: 0;
+
+        div {
+            position: absolute;
+            top: 12px;
+            width: 117px;
+            border: 2px solid #666;
+            border-radius: 4px 4px 12px 4px;
+            padding: var(--padding-4) var(--padding-12);
+            box-shadow: 0 0 8px #666;
+            background: #fff;
+        }
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-around;
+        width: min(
+            /* 74px = login tab & 117px = logo */
+                calc(100vw - (var(--padding-40) * 2) - 74px - 117px),
+            560px
+        );
+
+        h2 {
+            padding: var(--padding-4) var(--padding-12);
+        }
+
+        a {
+            &:hover {
+                color: #888;
+            }
+
+            &:active {
+                color: #bbb;
+            }
+
+            &.selected {
+                color: #888;
+            }
+
+            &.selected h2 {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: '💩';
+                    right: -12px;
+                    top: 0;
                 }
             }
+        }
+    }
+
+    .login {
+        width: 74px;
+        margin-top: -36px;
+        border: 2px solid #666;
+        background: #333;
+        color: #fff;
+        box-shadow: 0 0 8px #666;
+        padding: var(--padding-8) var(--padding-12);
+        border-radius: 4px;
+        transition: 0.1s;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        &:active {
+            transform: scale(0.98);
         }
     }
 }

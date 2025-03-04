@@ -3,6 +3,7 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -12,10 +13,9 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    padding: 0 var(--padding-40) var(--padding-40) var(--padding-40);
 
     .pages {
-        width: min(100%, var(--screen-xl));
-        padding: var(--padding-20) 0;
+        width: min(100%, calc(var(--screen-xl) + var(--padding-40)));
+        padding: var(--padding-12) var(--padding-20) var(--padding-20);
     }
 }

@@ -51,11 +51,16 @@ export default [
                 {
                     code: 80,
                     ignoreComments: true,
-                    ignoreStrings: false,
-                    ignoreTemplateLiterals: false,
-                    ignoreRegExpLiterals: false
+                    ignoreStrings: true,
+                    ignoreTemplateLiterals: true,
+                    ignoreRegExpLiterals: true
                 }
             ],
+            'react/jsx-first-prop-new-line': ['error', 'multiline'],
+            'react/jsx-max-props-per-line': [
+                'error', { maximum: 1 }
+            ],
+            'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
             // Enforce spacing rules
             'no-multiple-empty-lines': [
                 'error',

@@ -1,7 +1,11 @@
 const Home = () => {
     return (
         <>
-            <h1>Hello, Poopy-Doo Crew!</h1>
+            <h2> Hello, Poopy-Doo Crew! </h2>
+            <p> Welcome message here.. </p>
+
+            <h3> About </h3>
+            <p>{'Talk about the company basics & how to get started using our services..'}</p>
         </>
     )
 }
