@@ -1,4 +1,12 @@
 {
+    // ignore scss types visibility
+    "files.exclude": {
+        "**/*.scss.d.ts": true
+    },
+    "search.exclude": {
+        "**/*.scss.d.ts": true
+    },
+
     // UI Preferences
     "workbench.colorTheme": "Default Dark+",
 

@@ -12,14 +12,16 @@ const Navbar = () => {
     return (
         <>
             <div className={style.bar}>
-                {/* TODO: add contact info here.. */}
+                (123) 456-7890
+                &nbsp; | &nbsp;
+                PoopyDoo-Crew@gmail.com
             </div>
 
             <div className={style.nav}>
                 <ul>
                     <Link
                         to={ROUTES.HOME}
-                        className={`${location.pathname === ROUTES.LOGIN
+                        className={`${location.pathname === ROUTES.HOME
                             ? style.selected : ''} 
                             ${style.logo}`}
                     >

@@ -1,4 +1,6 @@
-@import './config/variables.scss';
+@use './config/variables/padding.scss' as *;
+@use './config/variables/screen.scss' as *;
+@use './config/variables/colors.scss' as *;
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -13,9 +15,10 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    background: $white;
 
     .pages {
-        width: min(100%, calc(var(--screen-xl) + var(--padding-40)));
-        padding: var(--padding-12) var(--padding-20) var(--padding-20);
+        width: min(100%, calc($size-max + 120px));
+        padding: $pad-60;
     }
 }

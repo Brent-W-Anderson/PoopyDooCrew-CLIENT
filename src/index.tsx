@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Pages from './pages/Pages'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import './index.css'
+import './index.scss'
 import '@fontsource/roboto'
 
 ReactDOM.createRoot( document.getElementById( 'root' )! )
