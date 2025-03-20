@@ -1,16 +1,16 @@
 import { Link, useLocation } from 'react-router-dom'
+import { usePagesContext } from '../../pages/PagesContext'
 import ROUTES from '../../config/routes'
 import style from './Navbar.module.scss'
 
 const Navbar = () => {
     const location = useLocation()
-
-    if ( location.pathname === ROUTES.LOGIN ) {
-        return null
-    }
+    const { loginState } = usePagesContext()
+    const [isLoginClicked, setIsLoginClicked] = loginState
 
     return (
         <>
+            {/* TODO: make the contact info cycle like a carousel */}
             <div className={style.bar}>
                 (123) 456-7890
                 &nbsp; | &nbsp;
@@ -49,14 +49,15 @@ const Navbar = () => {
                             ) )}
                     </div>
 
-                    <Link
-                        to={ROUTES.LOGIN}
-                        className={`${location.pathname === ROUTES.LOGIN
-                            ? style.selected : ''} 
-                            ${style.login}`}
+                    <a
+                        className={`
+                            ${isLoginClicked ? style.selected : ''}
+                            ${style.login}
+                        `}
+                        onClick={() => setIsLoginClicked( true )}
                     >
                         <h2> LOGIN </h2>
-                    </Link>
+                    </a>
                 </ul>
             </div>
         </>

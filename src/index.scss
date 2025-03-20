@@ -1,6 +1,4 @@
-@use './config/variables/padding.scss' as *;
-@use './config/variables/screen.scss' as *;
-@use './config/variables/colors.scss' as *;
+@use './config/variables' as *;
 
 * {
     font-family: 'Roboto', sans-serif;
