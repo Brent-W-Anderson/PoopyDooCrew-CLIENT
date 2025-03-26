@@ -12,15 +12,17 @@
         "build": "vite build",
         "start": "vite preview",
         "clean:build:start": "yarn clean && yarn build && yarn start",
-        "generate-types": "set SASS_USE_EMBEDDED=true && typed-scss-modules src --watch",
+        "generate-types": "typed-scss-modules src --watch > nul 2>&1",
         "lint": "eslint . && prettier --check \"**/*.json\" || true",
         "lint:fix": "eslint . --fix && prettier --write \"**/*.json\""
     },
     "dependencies": {
         "@fontsource/roboto": "^5.2.5",
+        "classnames": "^2.5.1",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-router-dom": "^7.2.0",
+        "react-spinners": "^0.15.0",
         "sass": "^1.85.1"
     },
     "devDependencies": {

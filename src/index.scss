@@ -1,7 +1,7 @@
 @use './config/variables' as *;
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     box-sizing: border-box;
     font-size: 16px;
     margin: 0;
@@ -13,10 +13,12 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    width: 100%;
     background: $white;
 
     .pages {
         width: min(100%, calc($size-max + 120px));
+        height: 100%;
         padding: $pad-60;
     }
 }

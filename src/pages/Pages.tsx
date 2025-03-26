@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'
 import ROUTES from '../config/routes'
 import Navbar from '../components/Navbar/Navbar'
 import { PagesProvider } from './PagesContext'
+import { CircleSpinner } from '../components/Spinner/Spinner'
 
 // Lazy-loaded components
 const Home = lazy( () => import( './Home/Home' ) )
@@ -11,7 +12,6 @@ const Services = lazy( () => import( './Services/Services' ) )
 const Faq = lazy( () => import( './Faq/Faq' ) )
 const Contact = lazy( () => import( './Contact/Contact' ) )
 
-// TODO: add <Spinner /> component instead of using Loading...
 // TODO: add suspense/fallback with <Spinner /> to the Navbar also.
 const Pages = () => {
     const location = useLocation()
@@ -23,7 +23,7 @@ const Pages = () => {
             <div className="pages">
                 <Suspense
                     key={location.pathname}
-                    fallback={<div>Loading...</div>}
+                    fallback={<CircleSpinner />}
                 >
                     <Routes>
                         <Route
