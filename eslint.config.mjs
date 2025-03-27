@@ -11,9 +11,8 @@ export default [
     {
         languageOptions: {
             parser: tsParser,
-            globals: {
-                document: 'readonly',
-                window: 'readonly'
+            env: {
+                browser: true
             },
             parserOptions: {
                 ecmaVersion: 'latest',
