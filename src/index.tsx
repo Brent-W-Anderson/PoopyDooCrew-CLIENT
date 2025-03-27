@@ -9,7 +9,7 @@ import './index.scss'
 
 const App = () => {
     useEffect( () => {
-        // // clean out initial index.html spinner style
+        // clean out initial index.html spinner style
         document.getElementById( 'circle-spinner-style' )?.remove()
     }, [] )
 
