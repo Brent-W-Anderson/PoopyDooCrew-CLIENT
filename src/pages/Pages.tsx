@@ -2,22 +2,24 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import ROUTES from '../config/routes'
 import Navbar from '../components/Navbar/Navbar'
-import { PagesProvider } from './PagesContext'
+import { usePagesContext } from './PagesContext'
 import { CircleSpinner } from '../components/Spinner/Spinner'
+import Login from './Login/Login'
 
-// Lazy-loaded components
+// Lazy-loaded pages.
 const Home = lazy( () => import( './Home/Home' ) )
 const Pricing = lazy( () => import( './Pricing/Pricing' ) )
 const Services = lazy( () => import( './Services/Services' ) )
 const Faq = lazy( () => import( './Faq/Faq' ) )
 const Contact = lazy( () => import( './Contact/Contact' ) )
 
-// TODO: add suspense/fallback with <Spinner /> to the Navbar also.
 const Pages = () => {
     const location = useLocation()
+    const { loginState } = usePagesContext()
+    const [isLoginClicked] = loginState
 
     return (
-        <PagesProvider>
+        <>
             <Navbar />
 
             <div className="pages">
@@ -49,7 +51,9 @@ const Pages = () => {
                     </Routes>
                 </Suspense>
             </div>
-        </PagesProvider>
+
+            {isLoginClicked && <Login />}
+        </>
     )
 }
 

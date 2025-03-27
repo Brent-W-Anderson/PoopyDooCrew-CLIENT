@@ -10,7 +10,6 @@ const Navbar = () => {
 
     return (
         <>
-            {/* TODO: make the contact info cycle like a carousel */}
             <div className={style.bar}>
                 (123) 456-7890
                 &nbsp; | &nbsp;
